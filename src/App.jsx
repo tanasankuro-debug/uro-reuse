@@ -3,7 +3,7 @@ import { AppProvider } from './store/useAppStore'
 import AppLayout from './components/layout/AppLayout'
 import HomePage from './pages/HomePage'
 import MarketplacePage from './pages/MarketplacePage'
-import ScannerPage from './pages/ScannerPage'
+import BuyerScannerPage from './routes/scanner'
 import SellPage from './pages/SellPage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
@@ -22,7 +22,7 @@ export default function App() {
           <Route element={<AppLayout />}>
             <Route path={ROUTES.HOME} element={<HomePage />} />
             <Route path={ROUTES.MARKETPLACE} element={<MarketplacePage />} />
-            <Route path={ROUTES.SCANNER} element={<ScannerPage />} />
+            <Route path={ROUTES.SCANNER} element={<BuyerScannerPage />} />
             <Route path={ROUTES.SELL} element={<SellPage />} />
             <Route path={ROUTES.PROFILE} element={<div className="p-8 text-center text-gray-500">โปรไฟล์ (Prompt #3)</div>} />
             <Route path={ROUTES.ORDERS} element={<div className="p-8 text-center text-gray-500">คำสั่งซื้อ (Prompt #4)</div>} />
