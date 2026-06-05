@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --ff-green: #22c55e;
+  --ff-green-dark: #16a34a;
+  --ff-orange: #f97316;
+  --ff-red: #ef4444;
+  --ff-yellow: #eab308;
+  --ff-blue: #3b82f6;
+  --ff-purple: #8b5cf6;
+  --ff-bg: #f0fdf4;
+  --ff-surface: #ffffff;
+  --ff-border: #bbf7d0;
+  --ff-text: #14532d;
+  --ff-text-muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--ff-bg);
+  color: var(--ff-text);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Ant Design override — use green as primary */
+.ant-btn-primary {
+  background-color: var(--ff-green) !important;
+  border-color: var(--ff-green) !important;
+}
+
+.ant-btn-primary:hover {
+  background-color: var(--ff-green-dark) !important;
+  border-color: var(--ff-green-dark) !important;
+}
+
+/* Scanner pulse animation */
+@keyframes scan-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes scan-line {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scan-pulse {
+  animation: scan-pulse 2s ease-in-out infinite;
+}
+
+.scan-line {
+  animation: scan-line 2s linear infinite;
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.4s ease-out forwards;
+}
+
+/* Freshness score ring */
+.score-ring {
+  transition: stroke-dashoffset 0.8s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #bbf7d0;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #86efac;
+}
