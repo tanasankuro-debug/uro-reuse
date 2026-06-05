@@ -198,7 +198,7 @@ function ensureEnum<T extends string>(value: unknown, valid: T[], fallback: T): 
  * validateAndNormalize — sanitizes raw Gemini JSON
  * แก้ไขค่าที่ผิดพลาดเล็กน้อยโดยอัตโนมัติ แทนที่จะ throw error
  */
-function validateAndNormalize(raw: Record<string, unknown>): FoodAnalysisResult {
+export function validateAndNormalize(raw: Record<string, unknown>): FoodAnalysisResult {
   // visual_signs
   const vs = (raw.visual_signs as Record<string, unknown>) ?? {}
   const visual_signs: VisualSigns = {
